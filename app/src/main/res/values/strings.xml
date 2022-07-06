@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">WildRunning</string>
+
+    <string name="invitation">¿Hasta qué nivel eres capaz de llegar?</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Correo</string>
+    <string name="forgotPassword">¿Olvidaste tu contraseña?</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="resetPassword">Enviar Contraseña</string>
+    <string name="accept">He leído y acepto los</string>
+    <string name="terms">términos y condiciones de uso.</string>
+
+    <string name="empty_email">Introduce un Email por favor</string>
+    <string name="invalid_email">Email incorrecto</string>
+
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+</resources>

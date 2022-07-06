@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "98852576721",
+    "project_id": "wildrunning-808d6",
+    "storage_bucket": "wildrunning-808d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98852576721:android:3cfefdad1cb3b9e7a954f0",
+        "android_client_info": {
+          "package_name": "com.example.wildrunning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98852576721-g5683dg4p8ji602sb1obu40pnm8ercib.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf3Yjpgt0AhpeVIaVg5KkSe-wOQtUo4EI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98852576721-g5683dg4p8ji602sb1obu40pnm8ercib.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
