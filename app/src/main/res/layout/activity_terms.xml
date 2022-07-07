@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TermsActivity"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tvBarTitleTerms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bar_title_terms"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@color/gray"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/tvTerms1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:text="@string/terms1"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:id="@+id/tvTerms2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:text="@string/terms2"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:id="@+id/btnAcceptTerms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:text="@string/acceptTerms"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/green"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/btnDeniedTerms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:text="@string/deniedTerms"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/chrono_running"
+        android:textStyle="bold"/>
+
+
+</LinearLayout>
