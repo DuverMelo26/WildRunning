@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/WildRunning/app/src/main/res/drawable/ic_facebook.xml" value="0.1945" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/WildRunning/app/src/main/res/drawable/ic_google.xml" value="0.1945" />
         <entry key="..\:/Users/User/AndroidStudioProjects/WildRunning/app/src/main/res/layout/activity_forgot_password.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/WildRunning/app/src/main/res/layout/activity_login.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/WildRunning/app/src/main/res/layout/activity_login.xml" value="0.13" />
         <entry key="..\:/Users/User/AndroidStudioProjects/WildRunning/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/User/AndroidStudioProjects/WildRunning/app/src/main/res/layout/activity_terms.xml" value="0.5" />
       </map>
