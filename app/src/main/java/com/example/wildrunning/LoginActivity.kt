@@ -1,30 +1,15 @@
 package com.example.wildrunning
 
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
-import com.facebook.CallbackManager
-import com.facebook.FacebookCallback
-import com.facebook.FacebookException
-import com.facebook.login.LoginManager
-import com.facebook.login.LoginResult
-import com.google.android.gms.auth.api.identity.BeginSignInRequest
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.api.ApiException
-import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
@@ -36,8 +21,6 @@ class LoginActivity : AppCompatActivity() {
     companion object{
         lateinit var userEmail: String
         lateinit var providerSession: String
-        private const val TAG = "GoogleActivity"
-        private const val RC_SIGN_IN = 9001
     }
 
     private var email by Delegates.notNull<String>()
@@ -47,14 +30,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var etPassword: EditText
     private lateinit var lyTerms: LinearLayout
     private lateinit var etRepeatPassword: EditText
-    private lateinit var tvAlert: TextView
 
     private lateinit var mAuth: FirebaseAuth
-
-    private var RESULT_CODE_GOOGLE_SIGN_IN = 100
-
-    private lateinit var googleSignInClient: GoogleSignInClient
-    private val callbackManager = CallbackManager.Factory.create()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,9 +42,6 @@ class LoginActivity : AppCompatActivity() {
 
         etRepeatPassword = findViewById(R.id.etRepeatPassword)
         etRepeatPassword.visibility = View.INVISIBLE
-
-        tvAlert = findViewById(R.id.tvAlert)
-        tvAlert.visibility = View.INVISIBLE
 
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
@@ -93,33 +67,6 @@ class LoginActivity : AppCompatActivity() {
         startActivity(startMain)
     }
 
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-
-        callbackManager.onActivityResult(requestCode, resultCode, data)
-
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == RESULT_CODE_GOOGLE_SIGN_IN) {
-            try {
-                val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-                val account = task.getResult(ApiException::class.java)!!
-
-                if (account != null) {
-                    email = account.email!!
-                    val credential = GoogleAuthProvider.getCredential(account.idToken, null)
-                    mAuth.signInWithCredential(credential).addOnCompleteListener {
-                        if (it.isSuccessful) goHome(email, "Google")
-                        else showError("Google")
-                    }
-                }
-
-            } catch (e: ApiException) {
-                showError("Google")
-            }
-        }
-
-    }
 
     private fun manageButtonLogin(){
         email = etEmail.text.toString()
@@ -170,25 +117,20 @@ class LoginActivity : AppCompatActivity() {
         password = etPassword.text.toString()
         repeatPassword = etRepeatPassword.text.toString()
 
-        if (password.equals(repeatPassword)) {
-            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener{
-                    if (it.isSuccessful){
-                        var dateRegister = SimpleDateFormat("dd/MM/yyyy").format(Date())
-                        var dbRegister = FirebaseFirestore.getInstance()
-                        dbRegister.collection("users").document(email).set(hashMapOf(
-                            "user" to email,
-                            "dateRegister" to dateRegister
-                        ))
 
-                        goHome(email, "email")
-                    }else Toast.makeText(this, "No fue posible registrar el nuevo usuario", Toast.LENGTH_SHORT).show()
-                }
-        } else {
-            tvAlert = findViewById(R.id.tvAlert)
-            tvAlert.setText(R.string.diferentPasswords)
-            tvAlert.visibility = View.VISIBLE
-        }
+        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener{
+                if (it.isSuccessful){
+                    var dateRegister = SimpleDateFormat("dd/MM/yyyy").format(Date())
+                    var dbRegister = FirebaseFirestore.getInstance()
+                    dbRegister.collection("users").document(email).set(hashMapOf(
+                        "user" to email,
+                        "dateRegister" to dateRegister
+                    ))
+
+                    goHome(email, "email")
+                }else Toast.makeText(this, "No fue posible registrar el nuevo usuario", Toast.LENGTH_SHORT).show()
+            }
     }
 
 
@@ -213,60 +155,4 @@ class LoginActivity : AppCompatActivity() {
         val intent = Intent(this, TermsActivity::class.java)
         startActivity(intent)
     }
-
-
-    fun callSignInGoogle(view: View){
-        signInGoogle()
-    }
-    private fun signInGoogle(){
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-
-        var googleSignInClient = GoogleSignIn.getClient(this, gso)
-        googleSignInClient.signOut()
-
-        startActivityForResult(googleSignInClient.signInIntent, RESULT_CODE_GOOGLE_SIGN_IN)
-    }
-
-
-    fun callSignInFacebook(view: View){
-        signInFacebook()
-    }
-    private fun signInFacebook(){
-        LoginManager.getInstance().logInWithReadPermissions(this, listOf("email"))
-
-        LoginManager.getInstance().registerCallback(callbackManager, object :
-            FacebookCallback<LoginResult> {
-            override fun onSuccess(loginResult: LoginResult) {
-                loginResult.let {
-                    val token = it.accessToken
-                    val credential = FacebookAuthProvider.getCredential(token.token)
-                    mAuth.signInWithCredential(credential).addOnCompleteListener {
-                        if (it.isSuccessful){
-                            email = it.result.user?.email.toString()
-                            goHome(email, "Facebook")
-                        }else showError("Facebook")
-                    }
-                }
-
-            //handleFacebookAccessToken(loginResult.accessToken)
-            }
-
-            override fun onCancel() {
-            }
-
-            override fun onError(error: FacebookException) {
-                showError("Facebook")
-            }
-        })
-    }
-
-
-    private fun showError(provider: String){
-        Toast.makeText(this, "Error al conectar con $provider", Toast.LENGTH_SHORT)
-
-    }
-
 }

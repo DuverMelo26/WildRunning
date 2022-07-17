@@ -46,18 +46,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation platform('com.google.firebase:firebase-bom:30.2.0')
-    implementation 'com.google.android.gms:play-services-auth:20.2.0'
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-database:20.0.5'
     implementation 'com.google.firebase:firebase-firestore:24.2.0'
 
-<<<<<<< HEAD
     implementation 'me.tankery.lib:circularSeekBar:1.4.0'
 
     implementation 'androidx.drawerlayout:drawerlayout:1.1.1'
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
-=======
-    implementation 'com.facebook.android:facebook-android-sdk:9.1.1'
->>>>>>> e9cb2d231ebeb7051f34317a7a65fa9ae90f328b
 }
