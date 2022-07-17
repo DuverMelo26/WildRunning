@@ -44,9 +44,15 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
     implementation platform('com.google.firebase:firebase-bom:30.2.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-database:20.0.5'
     implementation 'com.google.firebase:firebase-firestore:24.2.0'
+
+    implementation 'me.tankery.lib:circularSeekBar:1.4.0'
+
+    implementation 'androidx.drawerlayout:drawerlayout:1.1.1'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
 }

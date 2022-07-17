@@ -23,4 +23,26 @@
     <string name="deniedTerms">No acepto</string>
 
     <string name="closedSession">Cerrar sesión</string>
+
+    <string name="barTitle">WildRunning</string>
+
+    <string name="menuRunning">Running</string>
+    <string name="menuRecord">Historial</string>
+    <string name="menuBecamePremium">Hazte premium</string>
+    <string name="menuClearPreferences">Reestablecer ajustes</string>
+    <string name="menuAccount">Cuenta</string>
+
+    <string name="userEmail">userTest@gmail.com</string>
+    <string name="headerSentence">Frase inspiradora</string>
+    <string name="totalTimeBike">0d 00:00:00</string>
+    <string name="totalTimeRunning">0d 00:00:00</string>
+    <string name="totalTimeRollerSkate">0d 00:00:00</string>
+    <string name="level">Nivel</string>
+    <string name="distance">DISTANCIA</string>
+    <string name="runs">CARRERAS</string>
+    <string name="totalDistance">0%</string>
+    <string name="totalRuns">0/0</string>
+
+    <string name="navigation_drawer_close">Cerrando menu</string>
+    <string name="navigation_drawer_open">Abriendo menu</string>
 </resources>
