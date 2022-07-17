@@ -5,7 +5,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -46,7 +45,6 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:backgroundTint="@color/white"/>
-
         <EditText
             android:id="@+id/etRepeatPassword"
             style="@style/viewCustom"
@@ -109,7 +107,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/google"
+            android:drawableLeft="@drawable/ic_google"
             android:text="@string/google"
             android:textAlignment="textStart"
             android:textColor="@color/black"
@@ -127,7 +125,7 @@
             android:textSize="22sp"
             android:textAlignment="textStart"
             android:paddingLeft="30dp"
-            android:drawableLeft="@drawable/facebook"/>
+            android:drawableLeft="@drawable/ic_facebook"/>
 
     </LinearLayout>
 </ScrollView>
