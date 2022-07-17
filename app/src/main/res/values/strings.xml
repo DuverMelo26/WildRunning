@@ -13,14 +13,15 @@
     <string name="empty_email">Introduce un Email por favor</string>
     <string name="invalid_email">Email incorrecto</string>
 
-    <string name="google">Google</string>
-    <string name="facebook">Facebook</string>
+    <string name="accounts">Iniciar sesión</string>
     
     <string name="bar_title_terms">Términos y Condiciones de Uso</string>
     <string name="terms1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
     <string name="terms2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</string>
     <string name="acceptTerms">Acepto</string>
     <string name="deniedTerms">No acepto</string>
+    <string name="google">Iniciar Google</string>
+    <string name="facebook">Iniciar Facebook</string>
 
     <string name="closedSession">Cerrar sesión</string>
 
@@ -45,4 +46,11 @@
 
     <string name="navigation_drawer_close">Cerrando menu</string>
     <string name="navigation_drawer_open">Abriendo menu</string>
+    
+    <string name="diferentPasswords">Las contraseñas no son iguales</string>
+    <string name="errorSession">El usuario o contraseña son incorrectos</string>
+
+    <string name="facebook_app_id">580168380191733</string>
+    <string name="fb_login_protocol_scheme">fb580168380191733</string>
+    <string name="facebook_client_token">c89bcd2df043b7fed7f13ecc4337ec93</string>
 </resources>
