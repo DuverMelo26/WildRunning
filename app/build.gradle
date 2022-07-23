@@ -52,4 +52,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:24.2.0'
 
     implementation 'com.facebook.android:facebook-android-sdk:9.1.1'
+
+    implementation 'me.tankery.lib:circularSeekBar:1.4.0'
+
+    implementation 'androidx.drawerlayout:drawerlayout:1.1.1'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
 }
